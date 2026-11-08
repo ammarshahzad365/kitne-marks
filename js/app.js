@@ -203,7 +203,9 @@
     out.bar = r.needPct;
     if (r.marks != null) {
       out.text = String(r.marks);
-      out.sub = '/ ' + r.total;
+      out.sub = '/ ' + r.total + (f.altTests ? ' ' + f.testName : '');
+      // Other accepted tests have unknown totals, so give their requirement as a percentage.
+      if (f.altTests) out.meta = esc(f.altTests) + ': ' + fmt(Math.ceil(r.needPct * 10 - 1e-9) / 10, 1) + '% · ' + meta;
     } else {
       out.text = fmt(r.pctRounded, 1) + '%';
       out.sub = 'of test';
@@ -329,10 +331,38 @@
     renderSources(uni);
   }
 
+  // ---------- theme ----------
+
+  var THEME_KEY = 'kitne-marks-theme';
+  var darkQuery = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+
+  function isDark() {
+    var t = document.documentElement.getAttribute('data-theme');
+    if (t) return t === 'dark';
+    return !!(darkQuery && darkQuery.matches);
+  }
+  function syncThemeButton() {
+    var dark = isDark();
+    document.documentElement.classList.toggle('is-dark', dark);
+    $('theme-toggle').setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+    $('theme-toggle').title = dark ? 'Light mode' : 'Dark mode';
+  }
+  function initTheme() {
+    syncThemeButton();
+    $('theme-toggle').addEventListener('click', function () {
+      var next = isDark() ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem(THEME_KEY, next); } catch (e) { /* storage unavailable */ }
+      syncThemeButton();
+    });
+    if (darkQuery && darkQuery.addEventListener) darkQuery.addEventListener('change', syncThemeButton);
+  }
+
   // ---------- events ----------
 
   function init() {
     load();
+    initTheme();
     writeInputs();
 
     $('uni-tabs').addEventListener('click', function (e) {

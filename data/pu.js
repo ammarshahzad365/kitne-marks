@@ -57,11 +57,13 @@
         test: 0.33,
         testName: 'ECAT',
         testTotal: 400,
+        // PU also accepts these tests; the score needed in them is shown as a percentage beside the ECAT marks.
+        altTests: 'PU-E/PU-M/PU-CSP or NUST',
         summary: 'FSc 67% + entry test 33% (ECAT, PU-E/PU-M/PU-CSP or NUST test). Matric is not counted.',
         sources: [regs(83, 'B.Sc. Electrical Engineering merit formula'), GUIDE]
       }
     },
-    testTotalNote: 'PU does not publish the entry test\'s total marks, so the score you need is shown as a percentage.',
+    testTotalNote: 'BS programs use PU\'s own entry test. PU does not publish its total marks, so those scores are shown as a percentage. Engineering programs are shown out of 400 for ECAT. If you took PU-E, PU-M, PU-CSP or the NUST test instead, use the percentage shown under the ECAT marks.',
     columns: {
       M: 'Morning (regular)',
       SS: 'Evening / Replica / Self-Support'
