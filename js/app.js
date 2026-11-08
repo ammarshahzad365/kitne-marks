@@ -2,7 +2,7 @@
   'use strict';
 
   var UNIS = window.MERIT_DATA.universities;
-  var STORE_KEY = 'merit-target-v1';
+  var STORE_KEY = 'kitne-marks-v1';
   var $ = function (id) { return document.getElementById(id); };
 
   var state = {
