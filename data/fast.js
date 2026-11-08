@@ -65,7 +65,7 @@
     meritNote: 'FAST does not publish closing merits on its website. These figures are from a FUNGEP post listing FAST Lahore\'s 1st and 2nd closing merits.',
     meritIndex: { label: 'FUNGEP post: FAST Lahore closing merits', url: POST },
     meritSources: {
-      post: { label: 'FUNGEP post: FAST Lahore 1st and 2nd closing merits (unofficial)', url: POST }
+      post: { label: 'FUNGEP post: FAST Lahore 1st and 2nd closing merits (unofficial)', short: 'FUNGEP post', url: POST }
     },
     programs: [
       { name: 'BS Computer Science', campus: 'Lahore', formula: 'computing', merits: m(75.75, 74.35) },

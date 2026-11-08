@@ -1333,50 +1333,62 @@ window.MERIT_DATA.uetMerits = {
   "meritSources": {
     "L1": {
       "label": "UET Merit List No. 1 (Minimum Aggregate)",
+      "short": "List 1",
       "url": "https://admission.uet.edu.pk/uploads/downloads/91a868d2-dfcb-4974-af21-453f6b6853d0.pdf"
     },
     "L2": {
       "label": "UET Merit List No. 2 (Closing Merits)",
+      "short": "List 2",
       "url": "https://admission.uet.edu.pk/uploads/downloads/a8090b4d-2448-42e7-999a-a948573c7f3b.pdf"
     },
     "L3": {
       "label": "UET Merit List No. 3 (Minimum Merit)",
+      "short": "List 3",
       "url": "https://admission.uet.edu.pk/uploads/downloads/f6d38fa4-a086-42a7-8c53-b2e9a52c99df.pdf"
     },
     "L4": {
       "label": "UET Merit List No. 4 (Closing Merit Report)",
+      "short": "List 4",
       "url": "https://admission.uet.edu.pk/uploads/downloads/bce6493e-8fe7-4e9e-a013-92003937d908.pdf"
     },
     "L7": {
       "label": "UET Merit List No. 7 (Waiting Queue Closing Merit)",
+      "short": "List 7",
       "url": "https://admission.uet.edu.pk/uploads/downloads/0116ccde-7b9b-465b-a103-71ebc625fd6a.pdf"
     },
     "L8": {
       "label": "UET Merit List No. 8 (Waiting Queue Closing Merit)",
+      "short": "List 8",
       "url": "https://admission.uet.edu.pk/uploads/downloads/6b28c330-8368-43c3-809c-34f69e22422f.pdf"
     },
     "L9": {
       "label": "UET Merit List No. 9 (Waiting Queue Closing Merit)",
+      "short": "List 9",
       "url": "https://admission.uet.edu.pk/uploads/downloads/6268b274-1681-45ee-bae6-e4a8de33ca11.pdf"
     },
     "L10": {
       "label": "UET Merit List No. 10 (Minimum Aggregate)",
+      "short": "List 10",
       "url": "https://admission.uet.edu.pk/uploads/downloads/e4fcf3d0-6f9b-4e9d-9b5a-8e5337e5b86f.pdf"
     },
     "L11": {
       "label": "UET Merit List No. 11 (Minimum Aggregate)",
+      "short": "List 11",
       "url": "https://admission.uet.edu.pk/uploads/downloads/31d4b7fb-9afd-43c8-8156-e497b099c56f.pdf"
     },
     "L12": {
       "label": "UET Merit List No. 12 (Minimum Aggregate)",
+      "short": "List 12",
       "url": "https://admission.uet.edu.pk/uploads/downloads/bc454c2c-3f51-4ce9-919d-5160f768701f.pdf"
     },
     "L13": {
       "label": "UET Available Leftover Seats & Closing Merits",
+      "short": "Leftover list",
       "url": "https://admission.uet.edu.pk/uploads/downloads/4a9dc699-5ac5-4fa7-b188-26b08d523b56.pdf"
     },
     "L14": {
       "label": "UET Left Over Seats Closing Merit (8 Sep 2026)",
+      "short": "Leftover list (8 Sep)",
       "url": "https://admission.uet.edu.pk/uploads/downloads/7b256eee-bf0b-4849-8f62-289dade2157b.pdf"
     }
   }

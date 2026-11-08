@@ -12,7 +12,7 @@
   // Pages in the merit PDF. Each merit links to the page it appears on.
   var meritSources = {};
   [1, 2, 3, 4, 5].forEach(function (p) {
-    meritSources['p' + p] = { label: 'PU Undergraduate Programs: Merit of Last Year 2025, page ' + p, url: MERIT + '#page=' + p };
+    meritSources['p' + p] = { label: 'PU Undergraduate Programs: Merit of Last Year 2025, page ' + p, short: 'PDF p.' + p, url: MERIT + '#page=' + p };
   });
 
   function v(morning, selfSupport, page) {
