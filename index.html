@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Merit Target · Entry Test Marks Calculator</title>
+  <meta name="description" content="See how many entry test marks you need for each program at UET Lahore, FAST Lahore, ITU and Punjab University, based on last year's closing merit.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">M</div>
+        <div>
+          <div class="brand-name">Merit Target</div>
+          <div class="brand-sub">Entry test marks you need, based on last year's closing merit</div>
+        </div>
+      </div>
+      <nav class="tabs" id="uni-tabs" aria-label="University"></nav>
+    </div>
+  </header>
+
+  <main class="wrap layout">
+    <aside class="side">
+      <form class="card" id="marks-form" autocomplete="off">
+        <h2 class="card-title">Your marks</h2>
+
+        <div class="field">
+          <label for="matric-obt">Matric (obtained / total)</label>
+          <div class="pair">
+            <input id="matric-obt" name="matricObt" type="number" inputmode="numeric" min="0" required>
+            <span aria-hidden="true">/</span>
+            <input id="matric-tot" name="matricTot" type="number" inputmode="numeric" min="1" aria-label="Matric total marks" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="p1-obt">FSc Part-1 (obtained / total)</label>
+          <div class="pair">
+            <input id="p1-obt" name="p1Obt" type="number" inputmode="numeric" min="0" required>
+            <span aria-hidden="true">/</span>
+            <input id="p1-tot" name="p1Tot" type="number" inputmode="numeric" min="1" aria-label="FSc Part-1 total marks" required>
+          </div>
+        </div>
+
+        <label class="check">
+          <input type="checkbox" id="has-full" name="hasFull">
+          I have my full FSc result
+        </label>
+        <div class="field" id="full-field" hidden>
+          <label for="full-obt">Full FSc (obtained / total)</label>
+          <div class="pair">
+            <input id="full-obt" name="fullObt" type="number" inputmode="numeric" min="0">
+            <span aria-hidden="true">/</span>
+            <input id="full-tot" name="fullTot" type="number" inputmode="numeric" min="1" aria-label="Full FSc total marks">
+          </div>
+        </div>
+        <p class="hint" id="fsc-note"></p>
+
+        <div id="pu-extras" hidden>
+          <label class="check">
+            <input type="checkbox" id="hafiz" name="hafiz">
+            <span>Hafiz-e-Quran (+<span id="hafiz-marks">20</span> marks)</span>
+          </label>
+          <div class="field">
+            <label for="late">Years since passing FSc (late sessions)</label>
+            <select id="late" name="lateYears">
+              <option value="0">Passed this year</option>
+              <option value="1">1 year</option>
+              <option value="2">2 years</option>
+              <option value="3">3 years</option>
+              <option value="4">4 years</option>
+              <option value="5">5 or more years</option>
+            </select>
+          </div>
+          <p class="hint" id="pu-extras-note"></p>
+        </div>
+
+        <div class="field">
+          <label for="group">Seat category</label>
+          <select id="group" name="group"></select>
+          <p class="hint" id="group-note"></p>
+        </div>
+
+        <p class="error" id="form-error" role="alert" hidden></p>
+      </form>
+
+      <section class="card" aria-labelledby="formula-title">
+        <h2 class="card-title small-caps" id="formula-title">How the merit is calculated</h2>
+        <div id="formulas"></div>
+      </section>
+    </aside>
+
+    <section class="results" aria-labelledby="results-title">
+      <div class="results-head">
+        <h2 id="results-title">Entry test score you need</h2>
+        <ul class="legend" aria-label="Legend">
+          <li><span class="dot above"></span>Already above</li>
+          <li><span class="dot reach"></span>Reachable</li>
+          <li><span class="dot tough"></span>Tough (90%+ of test)</li>
+          <li><span class="dot out"></span>Out of reach</li>
+        </ul>
+      </div>
+
+      <div class="filters">
+        <label class="visually-hidden" for="search">Search programs</label>
+        <input id="search" type="search" placeholder="Search programs…">
+        <div class="chips" id="campus-chips" role="group" aria-label="Campus"></div>
+        <label class="visually-hidden" for="sort">Sort programs</label>
+        <select id="sort">
+          <option value="default">Sort: default</option>
+          <option value="hard">Hardest first</option>
+          <option value="easy">Easiest first</option>
+          <option value="name">Name (A–Z)</option>
+        </select>
+      </div>
+
+      <div class="table-box" id="table-box"></div>
+      <div class="cards" id="cards"></div>
+      <p class="empty" id="empty" hidden>No programs match your search.</p>
+
+      <div class="card sources" id="sources"></div>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <p>Closing merits change every year, so treat these numbers as a guide, not a guarantee. Every figure links to the official page or document it came from. Check the university's own website before you apply.</p>
+  </footer>
+
+  <script src="data/uet.js"></script>
+  <script src="data/uet-info.js"></script>
+  <script src="data/fast.js"></script>
+  <script src="data/itu.js"></script>
+  <script src="data/pu.js"></script>
+  <script src="js/calc.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
