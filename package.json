@@ -1,0 +1,9 @@
+{
+  "name": "merit-target",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Entry test marks needed for UET, FAST, ITU and PU programs based on last year's closing merit",
+  "scripts": {
+    "test": "node --test tests/calc.test.js"
+  }
+}
