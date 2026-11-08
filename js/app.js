@@ -140,7 +140,9 @@
       return '<div class="weight"><b>' + fmt(b[0] * 100, 0) + '%</b><span>' + esc(b[1]) + '</span></div>';
     }).join('');
     if (f.test) {
-      html += '<div class="weight test"><b>' + fmt(f.test * 100, 0) + '%</b><span>' + esc(f.testName) + (f.testTotal ? ' /' + f.testTotal : '') + '</span></div>';
+      // Long test names ("ITU admission test") wrap badly in the small box.
+      var testLabel = f.testName.length > 8 ? 'Test' : f.testName;
+      html += '<div class="weight test"><b>' + fmt(f.test * 100, 0) + '%</b><span>' + esc(testLabel) + (f.testTotal ? ' /' + f.testTotal : '') + '</span></div>';
     }
     return '<div class="weights" style="grid-template-columns: repeat(' + (boxes.length + (f.test ? 1 : 0)) + ', minmax(0, 1fr))">' + html + '</div>';
   }
@@ -154,7 +156,8 @@
       if (s) {
         var a = MeritCalc.academicShare(uni, f, s);
         var max = f.academic === 'weighted' ? (f.matric + f.fsc) * 100 : f.academicWeight * 100;
-        share = '<div class="share"><span>Your ' + esc(MeritCalc.pickFsc(uni, s).label === 'Full FSc' ? 'Matric + full FSc' : 'Matric + FSc Part-1') + ' share</span>' +
+        var fscLabel = MeritCalc.pickFsc(uni, s).label === 'Full FSc' ? 'full FSc' : 'FSc Part-1';
+        share = '<div class="share"><span>Your ' + esc(f.academic === 'fscOnly' ? fscLabel : 'Matric + ' + fscLabel) + ' share</span>' +
           '<b>' + fmt(a, 2) + ' <small>of ' + fmt(max, 0) + '</small></b></div>';
       }
       return '<div class="formula">' +
