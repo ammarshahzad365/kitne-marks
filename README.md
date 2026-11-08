@@ -68,4 +68,6 @@ The other universities' data lives in `data/fast.js`, `data/itu.js` and `data/pu
 
 ## Deploying
 
-Any static host works: GitHub Pages, Netlify or Vercel. Point it at the repository root; there's nothing to build.
+It's live on GitHub Pages at https://ammarshahzad365.github.io/Marks-Calculator-entry-tests/ (Settings → Pages → Deploy from branch `main`, folder `/`). Any static host works the same way: point it at the repository root, there's nothing to build.
+
+The share-preview tags in `index.html` (`og:url`, `og:image`) use that address. If you move to another domain, update them.

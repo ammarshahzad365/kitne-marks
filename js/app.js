@@ -71,7 +71,7 @@
 
   function writeInputs() {
     var input = state.input;
-    var defaults = { matricTot: 1100, p1Tot: 550, fullTot: 1100 };
+    var defaults = { matricTot: 1200, p1Tot: 600, fullTot: 1200 };
     fields.forEach(function (f) {
       var v = input[f] != null ? input[f] : defaults[f];
       $(fieldIds[f]).value = v != null ? v : '';
